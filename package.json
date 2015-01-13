@@ -1,0 +1,19 @@
+{
+  "name": "in-publish",
+  "version": "1.0.0",
+  "description": "Detect if we were run as a result of `npm publish`",
+  "main": "index.js",
+  "bin": {
+    "in-publish": "cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iarna/in-publish"
+  },
+  "author": "Rebecca Turner <me@re-becca.org>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iarna/in-publish/issues"
+  },
+  "homepage": "https://github.com/iarna/in-publish"
+}
