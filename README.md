@@ -13,7 +13,7 @@ Then edit your package.json to have:
 
 ```json
   "scripts": {
-    "prepublish": "in-publish && thing-I-dont-want-on-dev-install || true"
+    "prepublish": "in-publish && thing-I-dont-want-on-dev-install || in-install"
   }
 ```
 
