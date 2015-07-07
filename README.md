@@ -13,11 +13,12 @@ Then edit your package.json to have:
 
 ```json
   "scripts": {
-    "prepublish": "in-publish && thing-I-dont-want-on-dev-install || in-install"
+    "prepublish": "in-publish && thing-I-dont-want-on-dev-install || not-in-publish"
   }
 ```
 
 Now when you run:
+
 ```
 $ npm install
 ```
@@ -28,13 +29,22 @@ $ npm publish
 ```
 And `thing-I-dont-want-on-dev-install` will be run.
 
-Caveat Emptor
-=============
+It's worth noting that the `prepublish` lifecycle is _ALSO_ called when you build a tarball, so:
 
-This detects that its running as a part of publish command in a terrible,
-terrible way.  NPM dumps out its config object blindly into the environment
-prior to running commands.  This includes the command line it was invoked
-with.  This module determines if its being run as a result of publish by
-looking at that env var.  This is not a part of the documented npm interface
-and so it is not guarenteed to be stable. 
+```
+$ npm pack
+```
 
+Will call your `prepublish` lifecycle, but with the examplea above,
+`thing-I-dont-want-on-dev-install` won't be run.
+
+If you want this, you can use another helper included here:
+
+```json
+  "scripts": {
+    "prepublish": "not-in-install && thing-I-dont-want-on-dev-install || in-install"
+  }
+```
+
+The above will run your `thing-I-dont-want-on-dev-install` on `publish` and
+on `pack` but not on `install`.

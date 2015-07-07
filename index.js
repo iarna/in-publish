@@ -1,5 +1,5 @@
 'use strict'
-module.exports = function () {
+function inCommand (cmd) {
   try {
     var npm_config_argv = JSON.parse(process.env['npm_config_argv'])
   } catch (e) {
@@ -13,8 +13,16 @@ module.exports = function () {
   var V
   while ((V = npm_config_argv.cooked.shift()) !== undefined) {
     if (/^-/.test(V)) continue
-    if (V === 'publish') return true
+    if (cmd.test(V)) return true
     return false
   }
   return false
+}
+
+exports.inPublish = function () {
+  return inCommand(/^pu(b(l(i(sh?)?)?)?)?$/)
+}
+
+exports.inInstall = function () {
+  return inCommand(/^i(n(s(t(a(ll?)?)?)?)?)?$/)
 }

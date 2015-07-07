@@ -4,8 +4,10 @@
   "description": "Detect if we were run as a result of `npm publish`",
   "main": "index.js",
   "bin": {
-    "in-publish": "cli.js",
-    "in-install": "not-cli.js"
+    "in-publish": "in-publish.js",
+    "in-install": "in-install.js",
+    "not-in-publish": "not-in-publish.js",
+    "not-in-install": "not-in-install.js"
   },
   "repository": {
     "type": "git",
