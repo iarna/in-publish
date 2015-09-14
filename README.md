@@ -35,7 +35,7 @@ It's worth noting that the `prepublish` lifecycle is _ALSO_ called when you buil
 $ npm pack
 ```
 
-Will call your `prepublish` lifecycle, but with the examplea above,
+Will call your `prepublish` lifecycle, but with the example above,
 `thing-I-dont-want-on-dev-install` won't be run.
 
 If you want this, you can use another helper included here:
