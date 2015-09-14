@@ -1,6 +1,6 @@
 {
   "name": "in-publish",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Detect if we were run as a result of `npm publish`",
   "main": "index.js",
   "bin": {
