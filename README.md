@@ -7,7 +7,7 @@ Detect if we were run as a result of `npm publish`. This is intended to allow yo
 easily have prepublish lifecycle scripts that don't run when you run `npm install`.
 
 ```
-$ npm install --save in-publish
+$ npm install --save-dev in-publish
 in-publish@1.0.0 node_modules/in-publish
 ```
 
