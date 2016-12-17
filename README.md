@@ -1,6 +1,8 @@
 in-publish
 ==========
 
+> For background, see [npm#10074](https://github.com/npm/npm/issues/10074).
+
 Detect if we were run as a result of `npm publish`. This is intended to allow you to
 easily have prepublish lifecycle scripts that don't run when you run `npm install`.
 
